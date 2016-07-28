@@ -107,7 +107,10 @@ class upload{
    
    //rename file in this function
    public function renameFile(){
-	   $rename_file = md5($this->uploaded_file);//use md5 to create a random 32 characters name file name
+	   $date = date("Y_m_d");
+	   $time = time();
+	   
+	   $rename_file = $date.$time;
 	   $this->random_name = str_replace($this->uploaded_file,$this->uploaded_file,$rename_file.'.'.$this->file_extension);
 	   
 	   return  $this->random_name;
